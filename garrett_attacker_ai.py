@@ -10,14 +10,11 @@ def getAction(state, time_left=None):
 
 
     """This is the main AI function.  It should return a valid AI action for this state."""
-    actions = getTurnInCardsActions(state)
-    for a in actions:
-        if a != None and len(actions) >= 1:
-            return a
     
     #Get the possible actions in this state
     myaction = None
     actions = getAllowedActions(state)
+    myaction = random.choice(actions)
 
     """ Picks the first 35 territories """
     if state.turn_type == 'PreAssign':
